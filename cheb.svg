@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A1F44"/>
+      <stop offset="100%" stop-color="#05070D"/>
+    </linearGradient>
+
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.55">
+      <stop offset="0%"  stop-color="#00E5FF" stop-opacity="0.45"/>
+      <stop offset="55%" stop-color="#00E5FF" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#00E5FF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="linkGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#0EA5E9"/>
+      <stop offset="50%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+
+    <linearGradient id="vGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#00E5FF"/>
+    </linearGradient>
+
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <filter id="glowV" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <!-- Фон -->
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="112" fill="url(#glow)"/>
+
+  <!-- Мягкое свечение в центре -->
+  <circle cx="256" cy="256" r="160" fill="#00E5FF" opacity="0.10" filter="url(#soft)"/>
+
+  <!-- Цепь -->
+  <g fill="none" stroke="url(#linkGrad)" stroke-width="14" stroke-linecap="round">
+    <!-- Левая половина -->
+    <ellipse cx="52"  cy="256" rx="22" ry="38"/>
+    <ellipse cx="100" cy="256" rx="38" ry="22"/>
+    <ellipse cx="148" cy="256" rx="22" ry="38"/>
+    <ellipse cx="204" cy="246" rx="36" ry="22" transform="rotate(-22 204 246)"/>
+
+    <!-- Правая половина -->
+    <ellipse cx="308" cy="246" rx="36" ry="22" transform="rotate(22 308 246)"/>
+    <ellipse cx="364" cy="256" rx="22" ry="38"/>
+    <ellipse cx="412" cy="256" rx="38" ry="22"/>
+    <ellipse cx="460" cy="256" rx="22" ry="38"/>
+  </g>
+
+  <!-- Свечение V -->
+  <path d="M206 168 L256 348 L306 168"
+        fill="none" stroke="#00E5FF" stroke-width="34"
+        stroke-linecap="round" stroke-linejoin="round"
+        opacity="0.6" filter="url(#glowV)"/>
+
+  <!-- Сама V -->
+  <path d="M206 168 L256 348 L306 168"
+        fill="none" stroke="url(#vGrad)" stroke-width="24"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Искры -->
+  <g fill="#00E5FF">
+    <circle cx="230" cy="128" r="6"/>
+    <circle cx="284" cy="132" r="5"/>
+    <circle cx="256" cy="98"  r="7"/>
+    <circle cx="196" cy="176" r="4"/>
+    <circle cx="318" cy="178" r="4"/>
+    <circle cx="172" cy="140" r="5"/>
+    <circle cx="342" cy="138" r="5"/>
+    <circle cx="256" cy="392" r="4"/>
+    <circle cx="222" cy="386" r="3"/>
+    <circle cx="290" cy="388" r="3"/>
+    <circle cx="180" cy="256" r="3" opacity="0.7"/>
+    <circle cx="332" cy="256" r="3" opacity="0.7"/>
+  </g>
+
+  <!-- Мелкие обломки цепи -->
+  <g fill="#00E5FF" opacity="0.65">
+    <rect x="238" y="192" width="10" height="6" rx="3" transform="rotate(28 243 195)"/>
+    <rect x="266" y="196" width="10" height="6" rx="3" transform="rotate(-32 271 199)"/>
+    <rect x="246" y="298" width="8"  height="5" rx="2.5" transform="rotate(48 250 300)"/>
+    <rect x="260" y="304" width="8"  height="5" rx="2.5" transform="rotate(-42 264 306)"/>
+    <rect x="150" y="220" width="6"  height="4" rx="2" transform="rotate(-30 153 222)"/>
+    <rect x="352" y="220" width="6"  height="4" rx="2" transform="rotate(30 355 222)"/>
+  </g>
+</svg>
